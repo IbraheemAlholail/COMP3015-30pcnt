@@ -18,10 +18,12 @@ class SceneBasic_Uniform : public Scene
 public:
     Plane plane;
     SkyBox sky;
-    float tPrev,angle;
+    float tPrev,angle, spinAngle;
     std::unique_ptr<ObjMesh> meshTable;
     std::unique_ptr<ObjMesh> meshBowl;
-    GLuint texWoodID, texGlassID, texCementID;
+    std::unique_ptr<ObjMesh> meshFish;
+    GLuint texWoodID, texGlassID, texCementID, texFishID;
+   
 
 
     GLSLProgram prog;

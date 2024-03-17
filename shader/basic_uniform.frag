@@ -7,6 +7,7 @@ in vec2 TexCoord;
 layout (binding = 0) uniform sampler2D glassTex;
 layout (binding = 1) uniform sampler2D woodTex;
 layout (binding = 2) uniform sampler2D cementTex;
+layout (binding = 3) uniform sampler2D fishTex;
 
 layout (location = 0) out vec4 FragColor;
 
@@ -43,6 +44,7 @@ vec3 blinnPhong(vec3 position, vec3 n) {
     vec3 glassTexColor = texture(glassTex, TexCoord).rgb;
     vec3 woodTexColor = texture(woodTex, TexCoord).rgb;
 	vec3 cementTexColor = texture(cementTex, TexCoord).rgb;
+	vec3 fishTexColor = texture(fishTex, TexCoord).rgb;
     vec3 texColor;
     
     if (Material.texChoice == 0) {
@@ -53,7 +55,10 @@ vec3 blinnPhong(vec3 position, vec3 n) {
 		texColor = vec3(0.0);
 	}else if (Material.texChoice == 4){
 		texColor = cementTexColor;
+	}else if (Material.texChoice == 5){
+	    texColor = fishTexColor;
 	}
+
 
     vec3 ambient =  Light.La * texColor;
     vec3 s = normalize(Light.Position.xyz - position);

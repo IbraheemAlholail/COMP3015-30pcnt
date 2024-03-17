@@ -21,6 +21,7 @@ SceneBasic_Uniform::SceneBasic_Uniform() :
     plane(50.0f, 50.0f, 1, 1), sky(100.0f) {
     meshBowl = ObjMesh::load("media/bowl.obj", true);
     meshTable = ObjMesh::load("media/table.obj", true);
+    meshFish = ObjMesh::load("media/fish.obj", true);
 }
 
 void SceneBasic_Uniform::initScene()
@@ -29,7 +30,7 @@ void SceneBasic_Uniform::initScene()
     glEnable(GL_DEPTH_TEST);
     model = mat4(1.0f);
     view = glm::lookAt(
-        vec3(10.0f, 12.0f, 10.0f),
+        vec3(5.0f, 12.0f, 5.0f),
         vec3(0.0f, 3.0f, 0.0f),
         vec3(0.0f, 1.0f, 0.0f));
 
@@ -49,7 +50,10 @@ void SceneBasic_Uniform::initScene()
     GLuint glassTexID = Texture::loadTexture("media/texture/glass.jpg");
     GLuint woodTexID = Texture::loadTexture("media/texture/wood.jpg");
     GLuint cementTexID = Texture::loadTexture("media/texture/cement.jpg");
+    GLuint fishTexID = Texture::loadTexture("media/texture/fish.jpg"); 
     GLuint skyTexID = Texture::loadHdrCubeMap("media/texture/cube/pisa-hdr/pisa");
+   
+
     
 
 
@@ -60,8 +64,9 @@ void SceneBasic_Uniform::initScene()
     glActiveTexture(GL_TEXTURE2);
     glBindTexture(GL_TEXTURE_2D, cementTexID);
     glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_2D, fishTexID);
+    glActiveTexture(GL_TEXTURE4);
     glBindTexture(GL_TEXTURE_CUBE_MAP, skyTexID);
-
 
 }
 
@@ -91,6 +96,10 @@ void SceneBasic_Uniform::update(float t)
     tPrev = t;
     angle += 0.25f * deltaT;
     if (angle > glm::two_pi<float>()) angle -= glm::two_pi<float>();
+
+    //make the fish spin
+    spinAngle += 0.25f ;
+    if (spinAngle > glm::two_pi<float>()) spinAngle -= glm::two_pi<float>();
 }
 
 void SceneBasic_Uniform::render()
@@ -130,9 +139,25 @@ void SceneBasic_Uniform::render()
 
     
     model = mat4(1.0f);
-    model = glm::translate(model, vec3(0.0f, 6.0f, 0.0f));
+    model = glm::translate(model, vec3(0.0f, 6.1f, 0.0f));
+    model = glm::rotate(model, glm::radians(90.0f), vec3(1.0f, 0.0f, 0.0f));
     setmatrices();
     meshBowl->render();
+
+    // Render Fish
+    prog.setUniform("Material.Kd", vec3(1.0f));
+    prog.setUniform("Material.Ka", vec3(0.2f * 0.3f, 0.55f * 0.3f, 0.9f * 0.3f));
+    prog.setUniform("Material.Ks", vec3(0.95f, 0.95f, 0.95f));
+    prog.setUniform("Material.Shininess", 500.1f);
+    prog.setUniform("Material.texChoice", 5);
+
+    model = mat4(1.0f);
+    model = glm::translate(model, vec3(0.4f, 6.05f, 1.2f));
+    model = glm::scale(model, vec3(0.2f));
+    model = glm::rotate(model, glm::radians(spinAngle), vec3(0.0f, 1.0f, 0.0f));
+    setmatrices();
+    meshFish->render();
+
 
     // Render Table
     prog.setUniform("Material.Kd", vec3(1.0f)); 
