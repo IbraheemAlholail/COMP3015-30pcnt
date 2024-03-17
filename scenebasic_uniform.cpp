@@ -18,7 +18,7 @@ using glm::mat3;
 
 SceneBasic_Uniform::SceneBasic_Uniform() :
     tPrev(0),
-    plane(50.0f, 50.0f, 1, 1) {
+    plane(50.0f, 50.0f, 1, 1), sky(100.0f) {
     meshBowl = ObjMesh::load("media/bowl.obj", true);
     meshTable = ObjMesh::load("media/table.obj", true);
 }
@@ -29,8 +29,8 @@ void SceneBasic_Uniform::initScene()
     glEnable(GL_DEPTH_TEST);
     model = mat4(1.0f);
     view = glm::lookAt(
-        vec3(7.0f, 12.0f, 7.0f),
-        vec3(0.0f, 1.0f, 0.0f),
+        vec3(10.0f, 12.0f, 10.0f),
+        vec3(0.0f, 3.0f, 0.0f),
         vec3(0.0f, 1.0f, 0.0f));
 
     projection = mat4(1.0f);
@@ -48,11 +48,20 @@ void SceneBasic_Uniform::initScene()
 
     GLuint glassTexID = Texture::loadTexture("media/texture/glass.jpg");
     GLuint woodTexID = Texture::loadTexture("media/texture/wood.jpg");
+    GLuint cementTexID = Texture::loadTexture("media/texture/cement.jpg");
+    GLuint skyTexID = Texture::loadHdrCubeMap("media/texture/cube/pisa-hdr/pisa");
     
+
+
     glActiveTexture(GL_TEXTURE0); 
     glBindTexture(GL_TEXTURE_2D, glassTexID );
     glActiveTexture(GL_TEXTURE1); 
     glBindTexture(GL_TEXTURE_2D, woodTexID); 
+    glActiveTexture(GL_TEXTURE2);
+    glBindTexture(GL_TEXTURE_2D, cementTexID);
+    glActiveTexture(GL_TEXTURE3);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, skyTexID);
+
 
 }
 
@@ -63,6 +72,11 @@ void SceneBasic_Uniform::compile()
         prog.compileShader("shader/basic_uniform.frag");
         prog.link();
         prog.use();
+
+        progSky.compileShader("shader/skybox.vert");
+        progSky.compileShader("shader/skybox.frag");
+        progSky.link();
+
     }
     catch (GLSLProgramException& e) {
         cerr << e.what() << endl;
@@ -83,19 +97,26 @@ void SceneBasic_Uniform::render()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
+    progSky.use(); 
+    progSky.setUniform("MVP", projection * view); 
+    sky.render(); 
+    prog.use(); 
+
     vec4 lightPos = vec4(10.0f * cos(angle), 10.0f, 10.0f * sin(angle), 1.0f);
     mat3 normalMatrix = mat3(vec3(view[0]), vec3(view[1]), vec3(view[2]));
     prog.setUniform("Light.Position", vec4(view * lightPos));
-    prog.setUniform("Spot.Position", vec4(view * lightPos));
+    prog.setUniform("Spot.Position", vec3(view * lightPos));
     prog.setUniform("Spot.Direction", normalMatrix * vec3(-lightPos));
 
+    
 
     // Render Plane
     prog.setUniform("Material.Kd", 0.7f, 0.7f, 0.7f);
     prog.setUniform("Material.Ks", 0.9f, 0.9f, 0.9f);
     prog.setUniform("Material.Ka", 0.1f, 0.1f, 0.1f);
     prog.setUniform("Material.Shininess", 500.0f);
-    prog.setUniform("Material.texChoice", 1);
+    prog.setUniform("Material.texChoice", 4);
     model = mat4(1.0f);
     setmatrices();
     plane.render();
@@ -124,8 +145,7 @@ void SceneBasic_Uniform::render()
     model = glm::translate(model, vec3(0.0f, 3.0f, 0.0f));
     setmatrices();
     meshTable->render();
-
-    
+  
 }
 
 void SceneBasic_Uniform::resize(int w, int h)

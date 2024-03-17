@@ -11,22 +11,24 @@
 #include "helper/teapot.h"
 #include "helper/plane.h"
 #include "helper/objmesh.h"
+#include "helper/skybox.h"
 
 class SceneBasic_Uniform : public Scene
 {
 public:
-    //Torus torus;
     Plane plane;
-    //Teapot teapot;
+    SkyBox sky;
     float tPrev,angle;
     std::unique_ptr<ObjMesh> meshTable;
     std::unique_ptr<ObjMesh> meshBowl;
-    GLuint texWoodID, texGlassID;
+    GLuint texWoodID, texGlassID, texCementID;
 
 
     GLSLProgram prog;
+    GLSLProgram progSky;
     void setmatrices();
     void compile();
+
 
 public:
     SceneBasic_Uniform();

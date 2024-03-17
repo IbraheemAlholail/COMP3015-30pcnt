@@ -1,14 +1,14 @@
-C:\Users\Public\OpenGL\src\glad.c;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\glad.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\cube.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\cube.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\glslprogram.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\glslprogram.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\glutils.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\glutils.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\objmesh.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\objmesh.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\plane.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\plane.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\skybox.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\skybox.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\stb\stb_image.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\stb_image.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\teapot.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\teapot.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\texture.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\texture.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\torus.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\torus.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\helper\trianglemesh.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\trianglemesh.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\main.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\main.obj
-C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\scenebasic_uniform.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt\Project_Template\x64\Debug\scenebasic_uniform.obj
+C:\Users\Public\OpenGL\src\glad.c;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\glad.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\cube.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\cube.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\glslprogram.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\glslprogram.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\glutils.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\glutils.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\objmesh.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\objmesh.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\plane.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\plane.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\skybox.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\skybox.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\stb\stb_image.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\stb_image.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\teapot.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\teapot.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\texture.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\texture.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\torus.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\torus.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\helper\trianglemesh.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\trianglemesh.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\main.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\main.obj
+C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\scenebasic_uniform.cpp;C:\Users\heemo\Desktop\OpenGL\COMP3015-30pcnt - Copy\Project_Template\x64\Debug\scenebasic_uniform.obj
