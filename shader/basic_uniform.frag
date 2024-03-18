@@ -35,7 +35,7 @@ uniform struct SpotLightInfo{
 	float Cutoff;
 } Spot;
 
-const int levels = 5;
+const int levels = 2;
 const float scaleFactor = 1.0 / levels;
 
 

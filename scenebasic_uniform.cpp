@@ -52,6 +52,7 @@ void SceneBasic_Uniform::initScene()
     GLuint cementTexID = Texture::loadTexture("media/texture/cement.jpg");
     GLuint fishTexID = Texture::loadTexture("media/texture/fish.jpg");
     GLuint fish2TexID = Texture::loadTexture("media/texture/fish2.jpg");
+
     GLuint skyTexID = Texture::loadHdrCubeMap("media/texture/cube/pisa-hdr/pisa");
 
    

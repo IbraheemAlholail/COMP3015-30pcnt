@@ -5,7 +5,7 @@
 
 int main(int argc, char* argv[])
 {
-	SceneRunner runner("Shader_Basics");
+	SceneRunner runner("COMP 3015 30% Fish Bowl");
 
 	std::unique_ptr<Scene> scene;
 
