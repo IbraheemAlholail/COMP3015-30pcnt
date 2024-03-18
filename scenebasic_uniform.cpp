@@ -50,8 +50,10 @@ void SceneBasic_Uniform::initScene()
     GLuint glassTexID = Texture::loadTexture("media/texture/glass.jpg");
     GLuint woodTexID = Texture::loadTexture("media/texture/wood.jpg");
     GLuint cementTexID = Texture::loadTexture("media/texture/cement.jpg");
-    GLuint fishTexID = Texture::loadTexture("media/texture/fish.jpg"); 
+    GLuint fishTexID = Texture::loadTexture("media/texture/fish.jpg");
+    GLuint fish2TexID = Texture::loadTexture("media/texture/fish2.jpg");
     GLuint skyTexID = Texture::loadHdrCubeMap("media/texture/cube/pisa-hdr/pisa");
+
    
 
     
@@ -66,6 +68,8 @@ void SceneBasic_Uniform::initScene()
     glActiveTexture(GL_TEXTURE3);
     glBindTexture(GL_TEXTURE_2D, fishTexID);
     glActiveTexture(GL_TEXTURE4);
+    glBindTexture(GL_TEXTURE_2D, fish2TexID);
+    glActiveTexture(GL_TEXTURE5);
     glBindTexture(GL_TEXTURE_CUBE_MAP, skyTexID);
 
 }
@@ -149,7 +153,7 @@ void SceneBasic_Uniform::render()
     prog.setUniform("Material.Ka", vec3(0.2f * 0.3f, 0.55f * 0.3f, 0.9f * 0.3f));
     prog.setUniform("Material.Ks", vec3(0.95f, 0.95f, 0.95f));
     prog.setUniform("Material.Shininess", 500.1f);
-    prog.setUniform("Material.texChoice", 5);
+    prog.setUniform("Material.texChoice", 6);
 
     model = mat4(1.0f);
     model = glm::translate(model, vec3(0.4f, 6.05f, 1.2f));

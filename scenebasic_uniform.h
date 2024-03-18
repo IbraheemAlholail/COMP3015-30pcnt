@@ -22,7 +22,7 @@ public:
     std::unique_ptr<ObjMesh> meshTable;
     std::unique_ptr<ObjMesh> meshBowl;
     std::unique_ptr<ObjMesh> meshFish;
-    GLuint texWoodID, texGlassID, texCementID, texFishID;
+    GLuint texWoodID, texGlassID, texCementID, texFishID, texFish2ID;
    
 
 
